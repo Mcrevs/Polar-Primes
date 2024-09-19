@@ -18,4 +18,4 @@ The program can be accessed in the GitHub releases page simply navigate to the l
 Alternatively, the program can be compiled from scratch using CMake. The program is designed for g++ on Windows but should also work with Visual Studio (MSVC) on Windows and g++ on Linux. I have not tested the program using any other build systems. All dependencies should be in this repository or automatically download by CMake.
 
 ## Credit
-Portions of this software (especially the Shader object) are modified versions of the code provided on https://learnopengl.com.
+Portions of this software (especially the Shader object) are modified versions of the code provided on https://learnopengl.com which is licenced under the CC BY 4.0 license available [here](https://creativecommons.org/licenses/by/4.0/legalcode) not the MIT licence of the rest of the software.
