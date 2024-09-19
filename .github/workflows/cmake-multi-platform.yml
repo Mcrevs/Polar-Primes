@@ -79,6 +79,13 @@ jobs:
       - name: Zip build
         run: |
           7z a -mx9 -tzip ${{ steps.strings.outputs.build-output-dir }}/install/Polar-Primes-${{ matrix.name }}.zip ${{ steps.strings.outputs.build-output-dir }}/install/bin/**
+          
+      - name: Save build results to artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.name }}-build-files
+          path: ${{ steps.strings.outputs.build-output-dir }}/install/Polar-Primes-${{ matrix.name }}.zip
+          retention-days: 2
 
       - name: Save executable to release
         uses: svenstaro/upload-release-action@v2
