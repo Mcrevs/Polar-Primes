@@ -76,7 +76,7 @@ glm::mat4 getCurrentMatrix(GLFWwindow* window, float radius)
     return glm::ortho(-ratio, ratio, -radius, radius);
 }
 
-int main()
+int main(int argc, const char* argv[])
 {
     // Initalise GLFW
     if (!glfwInit())
@@ -88,6 +88,8 @@ int main()
 
     // Calculate primes
     int point_count = 1000000;
+    if (argc > 1)
+        point_count = std::stoi(argv[1]);
     glm::vec2* points = new glm::vec2[point_count];
     int* primes = new int[point_count];
     std::cout << sizeof(glm::vec2) * point_count + sizeof(int) * point_count << " bytes reserved.\n";
