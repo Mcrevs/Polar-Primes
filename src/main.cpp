@@ -106,6 +106,7 @@ int main(int argc, const char* argv[])
     while (next_point < point_count)
     {
         i += 1;
+        // Angle is stored separately dude to imprecision of trig functions with large values
         theta = glm::mod(theta + 1, glm::tau<float>());
 
         bool is_prime = true;
@@ -113,7 +114,7 @@ int main(int argc, const char* argv[])
         for (int c = 0; c < next_point; c++)
         {
             int prime = primes[c];
-            if (prime >= root)
+            if (prime > root)
                 break;
             if (i % prime == 0)
             {
